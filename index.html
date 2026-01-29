@@ -2,120 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>E³ Leadership Appointment Manager</title>
-    
-    <!-- PWA Meta Tags -->
-    <meta name="description" content="Professional appointment management for E³ Leadership coaching">
-    <meta name="theme-color" content="#d4af37">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="E³ Appointments">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="apple-touch-icon" href="/icon-192.png">
-    
-    <!-- iOS Splash Screens -->
-    <link rel="apple-touch-startup-image" href="/icon-512.png">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Manager Pro - Google Calendar</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-tap-highlight-color: transparent;
-        }
-
-        html {
-            font-size: 14px; /* Smaller base for mobile */
-        }
-
-        @media (min-width: 768px) {
-            html {
-                font-size: 16px; /* Normal size for desktop */
-            }
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             min-height: 100vh;
-            padding: 10px;
-        }
-
-        @media (min-width: 768px) {
-            body {
-                padding: 20px;
-            }
+            padding: 20px;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
             overflow: hidden;
-        }
-
-        @media (min-width: 768px) {
-            .container {
-                border-radius: 20px;
-                box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            }
         }
 
         .header {
             background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
-            padding: 15px 15px;
+            padding: 30px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 3px solid #d4af37;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-        @media (min-width: 768px) {
-            .header {
-                padding: 30px 40px;
-                flex-wrap: nowrap;
-            }
         }
 
         .header h1 {
-            font-size: 18px;
+            font-size: 28px;
             font-weight: 600;
-        }
-
-        @media (min-width: 768px) {
-            .header h1 {
-                font-size: 28px;
-            }
         }
 
         .header-right {
             display: flex;
             align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        @media (min-width: 768px) {
-            .header-right {
-                gap: 30px;
-            }
+            gap: 30px;
         }
 
         .header-stats {
             display: flex;
-            gap: 15px;
-        }
-
-        @media (min-width: 768px) {
-            .header-stats {
-                gap: 30px;
-            }
+            gap: 30px;
         }
 
         .stat {
@@ -123,29 +58,16 @@
         }
 
         .stat-number {
-            font-size: 18px;
+            font-size: 24px;
             font-weight: bold;
             color: #d4af37;
         }
 
-        @media (min-width: 768px) {
-            .stat-number {
-                font-size: 24px;
-            }
-        }
-
         .stat-label {
-            font-size: 10px;
+            font-size: 12px;
             opacity: 0.9;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        @media (min-width: 768px) {
-            .stat-label {
-                font-size: 12px;
-                letter-spacing: 1px;
-            }
+            letter-spacing: 1px;
         }
 
         .auth-section {
@@ -177,12 +99,6 @@
             background: rgba(212, 175, 55, 0.2);
             border-radius: 20px;
             color: #d4af37;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .sync-status:hover {
-            background: rgba(212, 175, 55, 0.3);
         }
 
         .sync-dot {
@@ -206,37 +122,23 @@
 
         .sidebar {
             background: #f5f5f0;
-            padding: 15px;
+            padding: 30px;
             border-right: 1px solid #ddd;
-        }
-
-        @media (min-width: 968px) {
-            .sidebar {
-                padding: 30px;
-            }
         }
 
         .btn {
             width: 100%;
-            padding: 12px 15px;
+            padding: 15px 20px;
             border: none;
             border-radius: 10px;
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-        }
-
-        @media (min-width: 768px) {
-            .btn {
-                padding: 15px 20px;
-                font-size: 16px;
-                gap: 10px;
-            }
+            gap: 10px;
         }
 
         .btn-primary {
@@ -403,13 +305,7 @@
         }
 
         .content-area {
-            padding: 15px 15px;
-        }
-
-        @media (min-width: 768px) {
-            .content-area {
-                padding: 30px 40px;
-            }
+            padding: 30px 40px;
         }
 
         .view-tabs {
@@ -446,21 +342,13 @@
             background: #ffffff;
             border: 1px solid #ddd;
             border-radius: 12px;
-            padding: 15px;
+            padding: 20px;
             display: grid;
-            grid-template-columns: 60px 1fr auto;
-            gap: 12px;
+            grid-template-columns: 80px 1fr auto;
+            gap: 20px;
             align-items: center;
             transition: all 0.3s;
             border-left: 4px solid #d4af37;
-        }
-
-        @media (min-width: 768px) {
-            .appointment-card {
-                padding: 20px;
-                grid-template-columns: 80px 1fr auto;
-                gap: 20px;
-            }
         }
 
         .appointment-card:hover {
@@ -477,51 +365,27 @@
         }
 
         .appointment-time-hour {
-            font-size: 18px;
+            font-size: 24px;
             font-weight: bold;
             color: #d4af37;
         }
 
-        @media (min-width: 768px) {
-            .appointment-time-hour {
-                font-size: 24px;
-            }
-        }
-
         .appointment-time-period {
-            font-size: 10px;
+            font-size: 12px;
             color: #666;
             text-transform: uppercase;
         }
 
-        @media (min-width: 768px) {
-            .appointment-time-period {
-                font-size: 12px;
-            }
-        }
-
         .appointment-details h4 {
-            font-size: 16px;
+            font-size: 18px;
             margin-bottom: 5px;
             color: #333;
         }
 
-        @media (min-width: 768px) {
-            .appointment-details h4 {
-                font-size: 18px;
-            }
-        }
-
         .appointment-details p {
-            font-size: 12px;
+            font-size: 14px;
             color: #666;
             margin-bottom: 3px;
-        }
-
-        @media (min-width: 768px) {
-            .appointment-details p {
-                font-size: 14px;
-            }
         }
 
         .appointment-actions {
@@ -531,22 +395,13 @@
         }
 
         .btn-small {
-            padding: 10px 14px;
+            padding: 8px 16px;
             border: none;
             border-radius: 6px;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
-            min-height: 44px; /* iOS touch target */
-        }
-
-        @media (min-width: 768px) {
-            .btn-small {
-                padding: 8px 16px;
-                font-size: 13px;
-                min-height: auto;
-            }
         }
 
         .btn-edit {
@@ -859,94 +714,6 @@
             color: #333;
         }
 
-        .calendar-selector {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border: 1px solid #ddd;
-        }
-
-        .calendar-selector h3 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-
-        .calendar-list {
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .calendar-item {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            margin-bottom: 8px;
-            background: #f5f5f0;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-
-        .calendar-item:hover {
-            background: #e8e8e0;
-        }
-
-        .calendar-item input[type="checkbox"] {
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        .calendar-color {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            margin-right: 10px;
-            border: 2px solid white;
-            box-shadow: 0 0 0 1px #ddd;
-        }
-
-        .calendar-name {
-            flex: 1;
-            font-size: 14px;
-            color: #333;
-        }
-
-        .calendar-count {
-            font-size: 12px;
-            color: #666;
-            background: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-        }
-
-        .select-all-calendars {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            margin-bottom: 15px;
-            background: #d4af37;
-            color: #1a1a1a;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.2s;
-        }
-
-        .select-all-calendars:hover {
-            background: #f4d03f;
-        }
-
-        .select-all-calendars input[type="checkbox"] {
-            margin-right: 12px;
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
         .loading {
             display: inline-block;
             width: 20px;
@@ -962,154 +729,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* PWA Install Prompt */
-        .install-prompt {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-            color: #1a1a1a;
-            padding: 15px 30px;
-            border-radius: 50px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            display: none;
-            align-items: center;
-            gap: 15px;
-            z-index: 9999;
-            font-weight: 600;
-            animation: slideUp 0.3s ease-out;
-        }
-
-        .install-prompt.show {
-            display: flex;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateX(-50%) translateY(100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(-50%) translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .install-prompt button {
-            background: #1a1a1a;
-            color: #d4af37;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .install-prompt button:hover {
-            background: #2d2d2d;
-            transform: scale(1.05);
-        }
-
-        .install-prompt .close-prompt {
-            background: transparent;
-            color: #1a1a1a;
-            padding: 5px 10px;
-            font-size: 20px;
-        }
-
-        /* Offline Indicator */
-        .offline-indicator {
-            position: fixed;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #ff9800;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            display: none;
-            align-items: center;
-            gap: 10px;
-            z-index: 9999;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .offline-indicator.show {
-            display: flex;
-        }
-
-        .notification-permission-prompt {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            background: white;
-            border: 2px solid #d4af37;
-            border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            max-width: 350px;
-            z-index: 9999;
-            display: none;
-        }
-
-        .notification-permission-prompt.show {
-            display: block;
-            animation: slideIn 0.3s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(400px);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        .notification-permission-prompt h3 {
-            color: #1a1a1a;
-            margin-bottom: 10px;
-            font-size: 18px;
-        }
-
-        .notification-permission-prompt p {
-            color: #666;
-            margin-bottom: 15px;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .notification-permission-prompt .prompt-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .notification-permission-prompt button {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            border-radius: 8px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .notification-permission-prompt .btn-allow {
-            background: linear-gradient(135deg, #d4af37 0%, #f4d03f 100%);
-            color: #1a1a1a;
-        }
-
-        .notification-permission-prompt .btn-later {
-            background: #f5f5f5;
-            color: #666;
-        }
-
         @media (max-width: 968px) {
             .main-content {
                 grid-template-columns: 1fr;
@@ -1118,164 +737,25 @@
             .sidebar {
                 border-right: none;
                 border-bottom: 1px solid #ddd;
-                max-height: none;
             }
 
             .appointment-card {
                 grid-template-columns: 1fr;
                 text-align: center;
-                padding: 15px;
-            }
-
-            .appointment-time {
-                margin-bottom: 10px;
             }
 
             .appointment-actions {
                 flex-direction: row;
                 justify-content: center;
-                gap: 8px;
-            }
-
-            .btn-small {
-                flex: 1;
-                max-width: 150px;
             }
 
             .header {
                 flex-direction: column;
-                gap: 15px;
-                text-align: center;
-            }
-
-            .header h1 {
-                font-size: 20px;
+                gap: 20px;
             }
 
             .header-right {
                 flex-direction: column;
-                width: 100%;
-            }
-
-            .header-stats {
-                width: 100%;
-                justify-content: space-around;
-            }
-
-            .dashboard-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-
-            .dashboard-card {
-                padding: 15px;
-            }
-
-            .dashboard-card h3 {
-                font-size: 11px;
-            }
-
-            .dashboard-card .number {
-                font-size: 28px;
-            }
-
-            .view-tabs {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-
-            .view-tabs::-webkit-scrollbar {
-                display: none;
-            }
-
-            .tab {
-                white-space: nowrap;
-                padding: 10px 16px;
-                font-size: 14px;
-            }
-
-            .calendar-selector {
-                padding: 15px;
-            }
-
-            .calendar-item {
-                padding: 8px;
-                font-size: 13px;
-            }
-
-            .filters {
-                padding: 15px;
-            }
-
-            .filter-group {
-                margin-bottom: 12px;
-            }
-
-            .upcoming-section {
-                padding: 15px;
-            }
-
-            .upcoming-section h3 {
-                font-size: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 5px;
-            }
-
-            .container {
-                border-radius: 8px;
-            }
-
-            .header {
-                padding: 12px;
-            }
-
-            .header h1 {
-                font-size: 16px;
-            }
-
-            .stat-number {
-                font-size: 16px;
-            }
-
-            .stat-label {
-                font-size: 9px;
-            }
-
-            .appointment-card {
-                padding: 12px;
-            }
-
-            .appointment-details h4 {
-                font-size: 14px;
-            }
-
-            .appointment-details p {
-                font-size: 11px;
-            }
-
-            .btn {
-                padding: 10px 12px;
-                font-size: 13px;
-            }
-
-            .dashboard-card .number {
-                font-size: 24px;
-            }
-
-            .install-prompt {
-                bottom: 10px;
-                padding: 12px 20px;
-                font-size: 13px;
-            }
-
-            .install-prompt button {
-                padding: 8px 16px;
-                font-size: 13px;
             }
         }
     </style>
@@ -1346,15 +826,15 @@
                 </div>
                 <div class="auth-section">
                     <div id="signInSection">
-                        <button class="btn btn-google" id="signInBtn" onclick="handleAuthClick()" disabled style="opacity: 0.6;">
+                        <button class="btn btn-google" onclick="handleAuthClick()">
                             <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335"/></g></svg>
-                            Loading...
+                            Sign in with Google
                         </button>
                     </div>
                     <div id="userSection" style="display: none;">
-                        <div class="sync-status" onclick="document.getElementById('calendarSelector').scrollIntoView({behavior: 'smooth'})" title="Click to manage calendars">
+                        <div class="sync-status">
                             <span class="sync-dot"></span>
-                            <span id="syncStatusText">Connected</span>
+                            <span>Connected</span>
                         </div>
                         <div class="user-info">
                             <div class="user-name" id="userName"></div>
@@ -1374,15 +854,6 @@
                 <button class="btn btn-secondary" onclick="syncWithGoogle()" id="syncBtn" style="margin-bottom: 20px;" disabled>
                     🔄 Sync Now
                 </button>
-
-                <div class="calendar-selector" id="calendarSelector" style="display: none;">
-                    <h3>📅 My Calendars</h3>
-                    <div class="select-all-calendars" onclick="toggleAllCalendars()">
-                        <input type="checkbox" id="selectAllCalendars" onclick="event.stopPropagation(); toggleAllCalendars();">
-                        <span>Select All</span>
-                    </div>
-                    <div class="calendar-list" id="calendarList"></div>
-                </div>
 
                 <div class="calendar-widget">
                     <div class="calendar-header">
@@ -1443,7 +914,7 @@
                             <div class="number" id="dashMonthCount">0</div>
                         </div>
                         <div class="dashboard-card">
-                            <h3>Connected Calendars</h3>
+                            <h3>Google Synced</h3>
                             <div class="number" id="dashGoogleCount">0</div>
                         </div>
                     </div>
@@ -1550,92 +1021,9 @@
         </div>
     </div>
 
-    <!-- PWA Install Prompt -->
-    <div class="install-prompt" id="installPrompt">
-        <span>📱 Install E³ Appointments App</span>
-        <button onclick="installPWA()">Install</button>
-        <button class="close-prompt" onclick="closeInstallPrompt()">✕</button>
-    </div>
-
-    <!-- Offline Indicator -->
-    <div class="offline-indicator" id="offlineIndicator">
-        <span>⚠️</span>
-        <span>You're offline - changes will sync when connected</span>
-    </div>
-
-    <!-- Notification Permission Prompt -->
-    <div class="notification-permission-prompt" id="notificationPrompt">
-        <h3>🔔 Enable Notifications?</h3>
-        <p>Get reminded about your upcoming appointments so you never miss a session.</p>
-        <div class="prompt-actions">
-            <button class="btn-allow" onclick="requestNotificationPermission()">Enable</button>
-            <button class="btn-later" onclick="closeNotificationPrompt()">Later</button>
-        </div>
-    </div>
-
     <script src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
     <script src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
     <script>
-        // ==================== PWA FUNCTIONALITY ====================
-        
-        let deferredPrompt;
-        let swRegistration = null;
-
-        // Service Worker removed for simplification
-
-        // Install prompt removed
-
-        function isAppInstalled() {
-            return window.matchMedia('(display-mode: standalone)').matches ||
-                   window.navigator.standalone === true;
-        }
-
-        // Detect when app is installed
-        window.addEventListener('appinstalled', () => {
-            console.log('✅ App installed successfully');
-            closeInstallPrompt();
-        });
-
-        // Online/Offline detection
-        
-
-        
-
-        function showOfflineIndicator() {
-            const indicator = document.getElementById('offlineIndicator');
-            if (indicator) {
-                indicator.classList.add('show');
-            }
-        }
-
-        function hideOfflineIndicator() {
-            const indicator = document.getElementById('offlineIndicator');
-            if (indicator) {
-                indicator.classList.remove('show');
-            }
-        }
-
-        // Notifications removed for simplification // 24 hours
-
-        // ==================== END PWA FUNCTIONALITY ====================
-
-        // Helper function to get local date string (YYYY-MM-DD) without timezone issues
-        function getLocalDateString(date = new Date()) {
-            const year = date.getFullYear();
-            const month = String(date.getMonth() + 1).padStart(2, '0');
-            const day = String(date.getDate()).padStart(2, '0');
-            const result = `${year}-${month}-${day}`;
-            
-            // Debug logging
-            if (date.getDate() === new Date().getDate()) {
-                console.log('📅 Today\'s date:', result);
-                console.log('   - Browser timezone:', Intl.DateTimeFormat().resolvedOptions().timeZone);
-                console.log('   - Date object:', date.toString());
-            }
-            
-            return result;
-        }
-
         // Google API Configuration
         const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
         const SCOPES = 'https://www.googleapis.com/auth/calendar';
@@ -1648,20 +1036,11 @@
         // Data storage
         let appointments = [];
         let googleEvents = [];
-        let availableCalendars = [];
-        let selectedCalendars = JSON.parse(localStorage.getItem('selectedCalendars')) || [];
         let currentView = 'dashboard';
         let currentDate = new Date();
         let selectedDate = new Date();
         let editingId = null;
-        
-        // Pre-configured Client ID - users don't need to enter it
-        let CLIENT_ID = '820339586102-b8v8lrs9sks26vt5ddinc1funs1g4cls.apps.googleusercontent.com';
-        
-        // Store it in localStorage so the app knows it's configured
-        if (!localStorage.getItem('googleClientId')) {
-            localStorage.setItem('googleClientId', CLIENT_ID);
-        }
+        let CLIENT_ID = localStorage.getItem('googleClientId') || '';
 
         // Check if scripts are loading
         console.log('📋 Script started');
@@ -1670,39 +1049,24 @@
 
         // Initialize
         function init() {
-            try {
-                console.log('🚀 Initializing Appointment Manager Pro...');
-                console.log('   - Client ID pre-configured: YES');
+            console.log('🚀 Initializing Appointment Manager Pro...');
+            console.log('   - Client ID stored:', CLIENT_ID ? 'YES' : 'NO');
+            
+            if (CLIENT_ID) {
                 console.log('   - Client ID:', CLIENT_ID.substring(0, 30) + '...');
-                
-                // Hide setup screen, show main app (Client ID is pre-configured)
                 document.getElementById('setupScreen').style.display = 'none';
                 document.getElementById('mainApp').style.display = 'block';
                 console.log('⏳ Waiting for Google APIs to load...');
-                
-                loadAppointments();
-                renderCalendar();
-                updateStats();
-                renderAllViews();
-                setMinDate();
-                console.log('✅ Basic initialization complete');
-                
-                // Show PWA prompts if appropriate
-                if (isAppInstalled()) {
-                    console.log('✅ Running as installed PWA');
-                } else {
-                    console.log('📱 Running in browser');
-                }
-                
-                // Show notification prompt after delay
-                // Notifications disabled
-                
-                // Start notification checks if permission granted and API available
-                // Notification checks disabled
-            } catch (error) {
-                console.error('❌ Fatal error during initialization:', error);
-                alert('Error starting app: ' + error.message + '\n\nTry refreshing the page.');
+                // Don't call immediately - wait for scripts to load
+            } else {
+                console.log('⚠️  No Client ID - showing setup screen');
             }
+            loadAppointments();
+            renderCalendar();
+            updateStats();
+            renderAllViews();
+            setMinDate();
+            console.log('✅ Basic initialization complete');
         }
 
         function saveClientId() {
@@ -1803,35 +1167,9 @@
             console.log('   - gisInited:', gisInited);
             if (gapiInited && gisInited) {
                 console.log('✅ Both APIs ready - enabling sign-in button');
-                const signInBtn = document.getElementById('signInBtn');
-                if (signInBtn) {
-                    signInBtn.disabled = false;
-                    signInBtn.style.opacity = '1';
-                    signInBtn.innerHTML = `
-                        <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M17.6 9.2l-.1-1.8H9v3.4h4.8C13.6 12 13 13 12 13.6v2.2h3a8.8 8.8 0 0 0 2.6-6.6z" fill="#4285F4"/><path d="M9 18c2.4 0 4.5-.8 6-2.2l-3-2.2a5.4 5.4 0 0 1-8-2.9H1V13a9 9 0 0 0 8 5z" fill="#34A853"/><path d="M4 10.7a5.4 5.4 0 0 1 0-3.4V5H1a9 9 0 0 0 0 8l3-2.3z" fill="#FBBC05"/><path d="M9 3.6c1.3 0 2.5.4 3.4 1.3L15 2.3A9 9 0 0 0 1 5l3 2.4a5.4 5.4 0 0 1 5-3.7z" fill="#EA4335"/></g></svg>
-                        Sign in with Google
-                    `;
-                }
                 document.getElementById('signInSection').style.display = 'block';
             } else {
                 console.log('⏳ Waiting for APIs to initialize...');
-                
-                // Set a timeout to help users if APIs don't load after 15 seconds
-                setTimeout(() => {
-                    if (!gapiInited || !gisInited) {
-                        console.error('❌ APIs failed to load after 15 seconds');
-                        const signInBtn = document.getElementById('signInBtn');
-                        if (signInBtn) {
-                            signInBtn.innerHTML = '⚠️ Refresh Page';
-                            signInBtn.disabled = false;
-                            signInBtn.style.opacity = '1';
-                            signInBtn.onclick = () => {
-                                alert('Google APIs failed to load. This can happen due to:\n\n1. Slow internet connection\n2. Ad blockers blocking Google scripts\n3. Private browsing mode restrictions\n\nPlease try:\n• Refreshing the page\n• Disabling ad blockers\n• Using regular browsing mode\n• Trying a different browser (Chrome recommended)');
-                                location.reload();
-                            };
-                        }
-                    }
-                }, 15000);
             }
         }
 
@@ -1841,182 +1179,52 @@
             console.log('   - Client ID:', CLIENT_ID ? CLIENT_ID.substring(0, 30) + '...' : 'NOT SET');
             console.log('   - Token client exists:', !!tokenClient);
             
-            // Check if APIs are loaded
-            if (typeof google === 'undefined' || !google.accounts || !google.accounts.oauth2) {
-                console.error('❌ Google Identity Services not loaded');
-                
-                // Try to initialize after a delay
-                setTimeout(() => {
-                    if (typeof google !== 'undefined' && google.accounts && google.accounts.oauth2) {
-                        console.log('✅ Google API loaded after delay, retrying...');
-                        handleAuthClick(); // Retry
-                    } else {
-                        alert('Google Sign-in is still loading. Please wait 5 seconds and try again.\n\nIf this persists, try refreshing the page.');
-                    }
-                }, 3000);
-                return;
-            }
-            
-            if (typeof gapi === 'undefined' || !gapi.client) {
-                console.error('❌ Google API (gapi) not loaded');
-                
-                // Try to initialize after a delay
-                setTimeout(() => {
-                    if (typeof gapi !== 'undefined' && gapi.client) {
-                        console.log('✅ gapi loaded after delay, retrying...');
-                        handleAuthClick(); // Retry
-                    } else {
-                        alert('Google API is still loading. Please wait 5 seconds and try again.\n\nIf this persists, try refreshing the page.');
-                    }
-                }, 3000);
-                return;
-            }
-            
-            // Check if we need to reinitialize the token client
-            if (!tokenClient && CLIENT_ID) {
-                console.log('🔄 Reinitializing token client...');
-                try {
-                    tokenClient = google.accounts.oauth2.initTokenClient({
-                        client_id: CLIENT_ID,
-                        scope: SCOPES,
-                        callback: '', // will be set below
-                    });
-                    console.log('✅ Token client reinitialized');
-                } catch (error) {
-                    console.error('❌ Error reinitializing token client:', error);
-                    alert('Error initializing sign-in. Please refresh the page and try again.');
-                    return;
-                }
-            }
-            
-            if (!tokenClient) {
-                console.error('❌ Token client not available');
-                alert('Sign-in not ready. Please refresh the page and try again.');
-                return;
-            }
-            
             tokenClient.callback = async (resp) => {
                 console.log('📩 Received auth response:', resp.error ? 'ERROR' : 'SUCCESS');
                 if (resp.error !== undefined) {
                     console.error('❌ Auth error:', resp);
-                    
-                    // Provide helpful error messages
-                    let errorMsg = 'Authentication failed: ' + resp.error;
-                    
-                    if (resp.error === 'access_denied') {
-                        errorMsg += '\n\nYou cancelled the sign-in or denied permissions.\nPlease try again and click "Allow" to use Google Calendar features.';
-                    } else if (resp.error === 'invalid_client') {
-                        errorMsg += '\n\nYour Client ID may be incorrect.\nPlease check your Google Cloud Console settings.';
-                    } else if (resp.error.includes('redirect')) {
-                        errorMsg += '\n\nRedirect URI mismatch.\nMake sure your Netlify URL is added to Authorized JavaScript origins and Authorized redirect URIs in Google Cloud Console.';
-                    }
-                    
-                    alert(errorMsg);
-                    return;
+                    alert('Authentication failed: ' + resp.error + '\n\nPossible causes:\n1. Client ID is incorrect\n2. Authorized JavaScript origins not set in Google Cloud Console\n3. Need to add yourself as a test user\n\nCheck the setup guide for help!');
+                    throw (resp);
                 }
-                
                 console.log('✅ Authentication successful');
+                accessToken = gapi.client.getToken().access_token;
+                console.log('   - Access token received:', accessToken ? 'YES' : 'NO');
                 
-                try {
-                    accessToken = gapi.client.getToken().access_token;
-                    console.log('   - Access token received:', accessToken ? 'YES' : 'NO');
-                    
-                    document.getElementById('signInSection').style.display = 'none';
-                    document.getElementById('userSection').style.display = 'flex';
-                    document.getElementById('headerStats').style.display = 'flex';
-                    document.getElementById('newApptBtn').disabled = false;
-                    document.getElementById('syncBtn').disabled = false;
-                    
-                    console.log('🔄 Loading user profile...');
-                    await loadUserProfile();
-                    console.log('🔄 Syncing with Google Calendar...');
-                    await syncWithGoogle();
-                    
-                    console.log('✅ Sign-in complete!');
-                } catch (error) {
-                    console.error('❌ Error during post-authentication setup:', error);
-                    alert('Signed in successfully, but encountered an error loading your data.\nError: ' + error.message);
-                }
+                document.getElementById('signInSection').style.display = 'none';
+                document.getElementById('userSection').style.display = 'flex';
+                document.getElementById('headerStats').style.display = 'flex';
+                document.getElementById('newApptBtn').disabled = false;
+                document.getElementById('syncBtn').disabled = false;
+                
+                console.log('🔄 Loading user profile...');
+                await loadUserProfile();
+                console.log('🔄 Syncing with Google Calendar...');
+                await syncWithGoogle();
             };
 
-            try {
-                const currentToken = gapi.client.getToken();
-                if (currentToken === null) {
-                    console.log('🔓 Requesting new access token (consent required)...');
-                    tokenClient.requestAccessToken({prompt: 'consent'});
-                } else {
-                    console.log('🔓 Requesting access token (already consented)...');
-                    // Force new consent to avoid stale token issues
-                    tokenClient.requestAccessToken({prompt: 'consent'});
-                }
-            } catch (error) {
-                console.error('❌ Error requesting access token:', error);
-                alert('Error starting sign-in process.\nPlease refresh the page and try again.\n\nError: ' + error.message);
+            if (gapi.client.getToken() === null) {
+                console.log('🔓 Requesting new access token (consent required)...');
+                tokenClient.requestAccessToken({prompt: 'consent'});
+            } else {
+                console.log('🔓 Requesting access token (already consented)...');
+                tokenClient.requestAccessToken({prompt: ''});
             }
         }
 
         function handleSignoutClick() {
-            console.log('🚪 Signing out...');
-            
-            // Check if gapi and client are available
-            if (typeof gapi === 'undefined' || !gapi.client) {
-                console.log('⚠️  Google API not loaded, clearing local state only');
-                // Just clear local state
+            const token = gapi.client.getToken();
+            if (token !== null) {
+                google.accounts.oauth2.revoke(token.access_token);
+                gapi.client.setToken('');
                 accessToken = null;
-                googleEvents = [];
-                availableCalendars = [];
-                selectedCalendars = [];
-                localStorage.removeItem('selectedCalendars');
-                
-                // Reset UI
                 document.getElementById('signInSection').style.display = 'block';
                 document.getElementById('userSection').style.display = 'none';
                 document.getElementById('headerStats').style.display = 'none';
-                document.getElementById('calendarSelector').style.display = 'none';
                 document.getElementById('newApptBtn').disabled = true;
                 document.getElementById('syncBtn').disabled = true;
-                
-                document.getElementById('userName').textContent = '';
-                document.getElementById('userEmail').textContent = '';
-                
-                updateStats();
+                googleEvents = [];
                 renderAllViews();
-                return;
             }
-            
-            const token = gapi.client.getToken();
-            if (token !== null) {
-                console.log('   - Revoking access token');
-                google.accounts.oauth2.revoke(token.access_token, () => {
-                    console.log('✅ Token revoked');
-                });
-                gapi.client.setToken('');
-            }
-            
-            // Reset all state
-            accessToken = null;
-            googleEvents = [];
-            availableCalendars = [];
-            selectedCalendars = [];
-            localStorage.removeItem('selectedCalendars');
-            
-            // Reset UI
-            document.getElementById('signInSection').style.display = 'block';
-            document.getElementById('userSection').style.display = 'none';
-            document.getElementById('headerStats').style.display = 'none';
-            document.getElementById('calendarSelector').style.display = 'none';
-            document.getElementById('newApptBtn').disabled = true;
-            document.getElementById('syncBtn').disabled = true;
-            
-            // Clear user info
-            document.getElementById('userName').textContent = '';
-            document.getElementById('userEmail').textContent = '';
-            
-            // Re-render views
-            updateStats();
-            renderAllViews();
-            
-            console.log('✅ Signed out successfully');
         }
 
         async function loadUserProfile() {
@@ -2027,252 +1235,55 @@
                 const email = response.result.id;
                 document.getElementById('userName').textContent = response.result.summary || 'User';
                 document.getElementById('userEmail').textContent = email;
-                
-                // Load all available calendars
-                await loadAvailableCalendars();
             } catch (error) {
                 console.error('Error loading profile:', error);
             }
         }
 
-        // Load all available calendars
-        async function loadAvailableCalendars() {
-            try {
-                console.log('📋 Loading available calendars...');
-                const response = await gapi.client.calendar.calendarList.list({
-                    showHidden: false,
-                    showDeleted: false
-                });
-                
-                availableCalendars = response.result.items || [];
-                console.log('✅ Found ' + availableCalendars.length + ' calendars');
-                
-                // If no calendars are selected yet, select primary by default
-                if (selectedCalendars.length === 0 && availableCalendars.length > 0) {
-                    const primary = availableCalendars.find(cal => cal.primary);
-                    if (primary) {
-                        selectedCalendars = [primary.id];
-                        localStorage.setItem('selectedCalendars', JSON.stringify(selectedCalendars));
-                    }
-                }
-                
-                // Show calendar selector
-                document.getElementById('calendarSelector').style.display = 'block';
-                renderCalendarList();
-            } catch (error) {
-                console.error('❌ Error loading calendars:', error);
-            }
-        }
-
-        // Render the calendar list
-        function renderCalendarList() {
-            const container = document.getElementById('calendarList');
-            
-            if (!container) {
-                console.error('Calendar list container not found');
-                return;
-            }
-            
-            if (availableCalendars.length === 0) {
-                container.innerHTML = '<p style="color: #666; font-size: 13px; padding: 10px;">No calendars found</p>';
-                return;
-            }
-            
-            container.innerHTML = availableCalendars.map(calendar => {
-                const isSelected = selectedCalendars.includes(calendar.id);
-                const eventCount = googleEvents.filter(e => e.calendarId === calendar.id).length;
-                const color = calendar.backgroundColor || '#4285f4';
-                const calendarId = calendar.id.replace(/'/g, "\\'"); // Escape single quotes
-                
-                return `
-                    <div class="calendar-item" onclick="toggleCalendar('${calendarId}')">
-                        <input type="checkbox" ${isSelected ? 'checked' : ''} 
-                               onclick="event.stopPropagation(); toggleCalendar('${calendarId}');">
-                        <div class="calendar-color" style="background-color: ${color};"></div>
-                        <div class="calendar-name">${calendar.summary}${calendar.primary ? ' (Primary)' : ''}</div>
-                        <div class="calendar-count">${eventCount} events</div>
-                    </div>
-                `;
-            }).join('');
-            
-            // Update select all checkbox
-            const selectAllCheckbox = document.getElementById('selectAllCalendars');
-            if (selectAllCheckbox) {
-                const allSelected = availableCalendars.length > 0 && 
-                                   selectedCalendars.length === availableCalendars.length;
-                selectAllCheckbox.checked = allSelected;
-            }
-        }
-
-        // Toggle a single calendar
-        function toggleCalendar(calendarId) {
-            if (!calendarId) {
-                console.error('No calendar ID provided');
-                return;
-            }
-            
-            const index = selectedCalendars.indexOf(calendarId);
-            
-            if (index > -1) {
-                selectedCalendars.splice(index, 1);
-            } else {
-                selectedCalendars.push(calendarId);
-            }
-            
-            localStorage.setItem('selectedCalendars', JSON.stringify(selectedCalendars));
-            syncWithGoogle();
-        }
-
-        // Toggle all calendars
-        function toggleAllCalendars() {
-            const selectAllCheckbox = document.getElementById('selectAllCalendars');
-            
-            if (!selectAllCheckbox) {
-                console.error('Select all checkbox not found');
-                return;
-            }
-            
-            if (selectAllCheckbox.checked) {
-                // Unselect all
-                selectedCalendars = [];
-            } else {
-                // Select all
-                selectedCalendars = availableCalendars.map(cal => cal.id);
-            }
-            
-            localStorage.setItem('selectedCalendars', JSON.stringify(selectedCalendars));
-            syncWithGoogle();
-        }
-
         // Sync with Google Calendar
         async function syncWithGoogle() {
-            if (!accessToken) {
-                console.log('⚠️  No access token - skipping sync');
-                return;
-            }
+            if (!accessToken) return;
 
             try {
-                console.log('🔄 Syncing with Google Calendar...');
-                console.log('   - Selected calendars:', selectedCalendars.length);
-                
                 const now = new Date();
                 const timeMin = new Date(now.getFullYear(), now.getMonth() - 1, 1).toISOString();
                 const timeMax = new Date(now.getFullYear(), now.getMonth() + 2, 0).toISOString();
 
-                googleEvents = [];
+                const response = await gapi.client.calendar.events.list({
+                    'calendarId': 'primary',
+                    'timeMin': timeMin,
+                    'timeMax': timeMax,
+                    'showDeleted': false,
+                    'singleEvents': true,
+                    'orderBy': 'startTime'
+                });
 
-                // If no calendars selected, don't sync
-                if (selectedCalendars.length === 0) {
-                    console.log('⚠️  No calendars selected');
-                    updateStats();
-                    renderAllViews();
-                    renderCalendar();
-                    return;
-                }
-
-                // Fetch events from each selected calendar
-                for (const calendarId of selectedCalendars) {
-                    try {
-                        const response = await gapi.client.calendar.events.list({
-                            'calendarId': calendarId,
-                            'timeMin': timeMin,
-                            'timeMax': timeMax,
-                            'showDeleted': false,
-                            'singleEvents': true,
-                            'orderBy': 'startTime'
-                        });
-
-                        const calendar = availableCalendars.find(cal => cal.id === calendarId);
-                        const calendarName = calendar ? calendar.summary : 'Unknown Calendar';
-                        const calendarColor = calendar ? calendar.backgroundColor : '#4285f4';
-
-                        console.log(`📊 Processing ${response.result.items?.length || 0} events from: ${calendarName}`);
-
-                        const events = (response.result.items || []).map(event => {
-                            // Parse dates properly considering timezone
-                            let eventDate, eventTime, duration;
-                            
-                            if (event.start.dateTime) {
-                                // Event has specific time - parse as local time
-                                const startDate = new Date(event.start.dateTime);
-                                eventDate = getLocalDateString(startDate);
-                                eventTime = startDate.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: false});
-                                
-                                console.log(`⏰ Timed: "${event.summary}" | Raw: ${event.start.dateTime} → Final: ${eventDate} ${eventTime}`);
-                                
-                                if (event.end.dateTime) {
-                                    const endDate = new Date(event.end.dateTime);
-                                    duration = Math.round((endDate - startDate) / 60000);
-                                } else {
-                                    duration = 60;
-                                }
-                            } else if (event.start.date) {
-                                // All-day event - use the date string DIRECTLY
-                                // DO NOT parse through Date object - it causes timezone issues
-                                eventDate = event.start.date; // Keep as YYYY-MM-DD string
-                                eventTime = '00:00';
-                                
-                                console.log(`📅 All-day: "${event.summary}" | Raw: ${event.start.date} → Final: ${eventDate}`);
-                                
-                                if (event.end.date) {
-                                    // For duration, we can use simple string comparison
-                                    duration = 1440; // Default to 1 day
-                                } else {
-                                    duration = 1440;
-                                }
-                            } else {
-                                // Fallback
-                                console.warn(`⚠️ Unknown format: "${event.summary}"`, event);
-                                eventDate = getLocalDateString();
-                                eventTime = '00:00';
-                                duration = 60;
-                            }
-                            
-                            const mappedEvent = {
-                                id: 'google_' + calendarId + '_' + event.id,
-                                googleId: event.id,
-                                calendarId: calendarId,
-                                calendarName: calendarName,
-                                calendarColor: calendarColor,
-                                clientName: event.summary || 'Untitled Event',
-                                clientEmail: event.attendees?.[0]?.email || '',
-                                clientPhone: '',
-                                serviceType: 'meeting',
-                                date: eventDate,
-                                time: eventTime,
-                                duration: duration.toString(),
-                                status: 'confirmed',
-                                notes: event.description || '',
-                                source: 'google',
-                                location: event.location || '',
-                                htmlLink: event.htmlLink
-                            };
-                            
-                            return mappedEvent;
-                        });
-
-                        googleEvents.push(...events);
-                        console.log(`   - ${calendarName}: ${events.length} events`);
-                    } catch (error) {
-                        console.error(`❌ Error syncing calendar ${calendarId}:`, error);
-                    }
-                }
+                googleEvents = response.result.items.map(event => ({
+                    id: 'google_' + event.id,
+                    googleId: event.id,
+                    clientName: event.summary || 'Untitled Event',
+                    clientEmail: event.attendees?.[0]?.email || '',
+                    clientPhone: '',
+                    serviceType: 'meeting',
+                    date: event.start.dateTime ? event.start.dateTime.split('T')[0] : event.start.date,
+                    time: event.start.dateTime ? new Date(event.start.dateTime).toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit', hour12: false}) : '00:00',
+                    duration: event.end.dateTime && event.start.dateTime ? 
+                        Math.round((new Date(event.end.dateTime) - new Date(event.start.dateTime)) / 60000) : '60',
+                    status: 'confirmed',
+                    notes: event.description || '',
+                    source: 'google',
+                    location: event.location || '',
+                    htmlLink: event.htmlLink
+                }));
 
                 updateStats();
                 renderAllViews();
                 renderCalendar();
                 
-                // Safely render calendar list
-                try {
-                    renderCalendarList();
-                } catch (error) {
-                    console.error('Error rendering calendar list:', error);
-                }
-                
-                console.log('✅ Synced ' + googleEvents.length + ' total events from ' + selectedCalendars.length + ' calendars');
+                console.log('Synced ' + googleEvents.length + ' events from Google Calendar');
             } catch (error) {
-                console.error('❌ Fatal error syncing with Google Calendar:', error);
-                alert('Error syncing with Google Calendar: ' + error.message + '\n\nPlease try signing out and back in.');
+                console.error('Error syncing with Google Calendar:', error);
+                alert('Error syncing with Google Calendar. Please try again.');
             }
         }
 
@@ -2326,7 +1337,7 @@
 
         // Local storage functions
         function setMinDate() {
-            const today = getLocalDateString();
+            const today = new Date().toISOString().split('T')[0];
             document.getElementById('appointmentDate').setAttribute('min', today);
         }
 
@@ -2351,48 +1362,44 @@
         // Update statistics
         function updateStats() {
             const allAppts = getAllAppointments();
-            const today = getLocalDateString();
+            const today = new Date().toISOString().split('T')[0];
             const todayAppts = allAppts.filter(a => a.date === today && a.status !== 'cancelled');
             const upcomingAppts = allAppts.filter(a => {
-                // Compare dates as strings (YYYY-MM-DD format)
-                return a.date >= today && a.status !== 'cancelled';
+                const apptDate = new Date(a.date);
+                const now = new Date();
+                return apptDate >= now && a.status !== 'cancelled';
             });
 
             document.getElementById('totalAppointments').textContent = allAppts.length;
             document.getElementById('todayAppointments').textContent = todayAppts.length;
             document.getElementById('upcomingAppointments').textContent = upcomingAppts.length;
-            
-            // Update sync status text
-            const syncStatusText = document.getElementById('syncStatusText');
-            if (syncStatusText && selectedCalendars.length > 0) {
-                syncStatusText.textContent = `${selectedCalendars.length} Calendar${selectedCalendars.length !== 1 ? 's' : ''}`;
-            }
 
-            // Dashboard stats - use string comparison
-            const weekStartStr = getLocalDateString();
-            const weekEndDate = new Date();
-            weekEndDate.setDate(weekEndDate.getDate() + 7);
-            const weekEndStr = getLocalDateString(weekEndDate);
+            // Dashboard stats
+            const weekStart = new Date();
+            weekStart.setHours(0, 0, 0, 0);
+            const weekEnd = new Date(weekStart);
+            weekEnd.setDate(weekEnd.getDate() + 7);
 
-            const monthStartDate = new Date();
-            monthStartDate.setDate(1);
-            const monthStartStr = getLocalDateString(monthStartDate);
-            const monthEndDate = new Date(monthStartDate);
-            monthEndDate.setMonth(monthEndDate.getMonth() + 1);
-            const monthEndStr = getLocalDateString(monthEndDate);
+            const monthStart = new Date();
+            monthStart.setDate(1);
+            monthStart.setHours(0, 0, 0, 0);
+            const monthEnd = new Date(monthStart);
+            monthEnd.setMonth(monthEnd.getMonth() + 1);
 
             const weekCount = allAppts.filter(a => {
-                return a.date >= weekStartStr && a.date < weekEndStr && a.status !== 'cancelled';
+                const d = new Date(a.date);
+                return d >= weekStart && d < weekEnd && a.status !== 'cancelled';
             }).length;
 
             const monthCount = allAppts.filter(a => {
-                return a.date >= monthStartStr && a.date < monthEndStr && a.status !== 'cancelled';
+                const d = new Date(a.date);
+                return d >= monthStart && d < monthEnd && a.status !== 'cancelled';
             }).length;
 
             document.getElementById('dashTodayCount').textContent = todayAppts.length;
             document.getElementById('dashWeekCount').textContent = weekCount;
             document.getElementById('dashMonthCount').textContent = monthCount;
-            document.getElementById('dashGoogleCount').textContent = selectedCalendars.length;
+            document.getElementById('dashGoogleCount').textContent = googleEvents.length;
         }
 
         // Calendar rendering
@@ -2427,10 +1434,10 @@
 
             for (let day = 1; day <= daysInMonth; day++) {
                 const date = new Date(year, month, day);
-                const dateStr = getLocalDateString(date);
+                const dateStr = date.toISOString().split('T')[0];
                 const hasAppts = allAppts.some(a => a.date === dateStr);
                 const isToday = isCurrentMonth && day === today.getDate();
-                const isSelected = getLocalDateString(selectedDate) === dateStr;
+                const isSelected = selectedDate.toISOString().split('T')[0] === dateStr;
 
                 let classes = 'calendar-day';
                 if (isToday) classes += ' today';
@@ -2480,33 +1487,14 @@
 
         // Render functions
         function renderAllViews() {
-            try {
-                renderAppointmentsList();
-            } catch (error) {
-                console.error('Error rendering appointments list:', error);
-            }
-            
-            try {
-                renderTodayList();
-            } catch (error) {
-                console.error('Error rendering today list:', error);
-            }
-            
-            try {
-                renderUpcomingList();
-            } catch (error) {
-                console.error('Error rendering upcoming list:', error);
-            }
+            renderAppointmentsList();
+            renderTodayList();
+            renderUpcomingList();
         }
 
         function renderAppointmentsList() {
             const filtered = getFilteredAppointments();
             const container = document.getElementById('appointmentsList');
-            
-            if (!container) {
-                console.error('Appointments list container not found');
-                return;
-            }
 
             if (filtered.length === 0) {
                 container.innerHTML = `
@@ -2526,15 +1514,10 @@
         }
 
         function renderTodayList() {
-            const today = getLocalDateString();
+            const today = new Date().toISOString().split('T')[0];
             const allAppts = getAllAppointments();
             const todayAppts = allAppts.filter(a => a.date === today);
             const container = document.getElementById('todayList');
-            
-            if (!container) {
-                console.error('Today list container not found');
-                return;
-            }
 
             if (todayAppts.length === 0) {
                 container.innerHTML = `
@@ -2554,22 +1537,17 @@
         }
 
         function renderUpcomingList() {
-            const todayStr = getLocalDateString();
-            const weekEndDate = new Date();
-            weekEndDate.setDate(weekEndDate.getDate() + 7);
-            const weekEndStr = getLocalDateString(weekEndDate);
+            const now = new Date();
+            const weekEnd = new Date(now);
+            weekEnd.setDate(weekEnd.getDate() + 7);
 
             const allAppts = getAllAppointments();
             const upcoming = allAppts.filter(a => {
-                return a.date >= todayStr && a.date <= weekEndStr && a.status !== 'cancelled';
+                const apptDate = new Date(a.date);
+                return apptDate >= now && apptDate <= weekEnd && a.status !== 'cancelled';
             });
 
             const container = document.getElementById('upcomingList');
-            
-            if (!container) {
-                console.error('Upcoming list container not found');
-                return;
-            }
 
             if (upcoming.length === 0) {
                 container.innerHTML = `
@@ -2589,13 +1567,7 @@
         }
 
         function createAppointmentCard(appointment) {
-            // Parse date without timezone issues
-            const dateParts = appointment.date.split('-');
-            const year = parseInt(dateParts[0]);
-            const month = parseInt(dateParts[1]) - 1; // Month is 0-indexed
-            const day = parseInt(dateParts[2]);
-            const date = new Date(year, month, day, 12, 0, 0); // Use local timezone with noon time
-            
+            const date = new Date(appointment.date);
             const dateStr = date.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' });
             const [hours, minutes] = appointment.time.split(':');
             const hour = parseInt(hours);
@@ -2604,17 +1576,6 @@
 
             const isGoogle = appointment.source === 'google';
             const cardClass = isGoogle ? 'appointment-card google-event' : 'appointment-card';
-            
-            // Add calendar color indicator if it's a Google event
-            let calendarBadge = '';
-            if (isGoogle && appointment.calendarColor) {
-                calendarBadge = `
-                    <div style="display: flex; align-items: center; gap: 5px; margin-top: 5px;">
-                        <div style="width: 12px; height: 12px; border-radius: 50%; background-color: ${appointment.calendarColor}; border: 2px solid white; box-shadow: 0 0 0 1px #ddd;"></div>
-                        <span style="font-size: 12px; color: #666;">${appointment.calendarName}</span>
-                    </div>
-                `;
-            }
 
             let actions = '';
             if (isGoogle) {
@@ -2647,7 +1608,6 @@
                         <p>📅 ${dateStr}</p>
                         <span class="status-badge status-${appointment.status}">${appointment.status}</span>
                         ${isGoogle ? '<span class="source-badge">Google Calendar</span>' : ''}
-                        ${calendarBadge}
                     </div>
                     ${actions}
                 </div>
@@ -2694,7 +1654,7 @@
             document.getElementById('appointmentId').value = '';
             document.getElementById('syncToGoogle').checked = true;
             
-            const defaultDate = getLocalDateString(selectedDate);
+            const defaultDate = selectedDate.toISOString().split('T')[0];
             document.getElementById('appointmentDate').value = defaultDate;
             
             document.getElementById('appointmentModal').classList.add('show');
